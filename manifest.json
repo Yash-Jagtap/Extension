@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Mail Analysis Extension",
+  "version": "1.0",
+  "description": "A Chrome extension that analyzes opened emails and fetches results from an API.",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+   
+  },
+  "action": {
+    "default_popup":"popup.html",
+    "default_title": "Mail Analysis Extension"
+  },
+  "content_scripts": [
+    {
+     
+      "matches": ["https://mail.google.com/mail/u/*"],
+      
+      "js": ["content.js"]
+    }
+  ]
+  
+
+}
